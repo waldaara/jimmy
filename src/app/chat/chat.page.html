@@ -1,15 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Tab 1 </ion-title>
+    <ion-title>Chat</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Chat</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <h1 class="text-7xl font-bold">Hola</h1>
+  <div class="flex flex-col h-full">
+    <div class="flex flex-col flex-1 overflow-auto p-5 gap-3">
+      @for (message of messages(); track message.text) { @if (message.role ===
+      'model') {
+      <p
+        class="self-start max-w-[80%] p-2 rounded-[0_12px_12px_12px] bg-white/5"
+      >
+        {{message.text}}
+      </p>
+      } @else {
+      <p class="self-end max-w-[80%] p-2 rounded-[12px_0_12px_12px] bg-white/5">
+        {{message.text}}
+      </p>
+      } }
+    </div>
+
+    <div class="flex items-center p-3 gap-3">
+      <input
+        type="text"
+        placeholder="Type a message"
+        class="w-full p-3 rounded-2xl focus:outline-none"
+      />
+
+      <ion-button shape="round">
+        <ion-icon slot="icon-only" name="heart"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
 </ion-content>
