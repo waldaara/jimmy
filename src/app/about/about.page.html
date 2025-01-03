@@ -1,15 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Tab 2 </ion-title>
+    <ion-title> Acerca de </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Acerca de</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <h1>Hola</h1>
+  <div class="px-4 py-12 max-w-7xl mx-auto">
+    <!-- Sección de Encabezado -->
+    <div class="text-center mb-12 space-y-4">
+      <h1 class="text-3xl md:text-4xl font-semibold text-zinc-300">
+        Conoce al equipo detrás de
+        <span class="text-3xl md:text-4xl font-semibold text-blue-300"
+          >Jimmy</span
+        >
+        , tu abogado virtual
+      </h1>
+      <p class="text-lg text-zinc-500 max-w-2xl mx-auto">
+        Nuestro objetivo es simplificar el derecho y hacerlo
+        comprensible para todos.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+      <!-- Deivi -->
+      <a
+        class="bg-zinc-950 shadow-lg rounded-lg overflow-hidden"
+        href="https://waldaara.github.io/waldaara/"
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/81494336?v=4"
+          alt="David Aragundy"
+          class="w-full h-64 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-blue-300">David Aragundy</h3>
+        </div>
+      </a>
+
+      <!-- Tarjeta de Miembro -->
+      <a
+        href="https://gabsjimz.github.io/gabsjimz/"
+        class="bg-zinc-950 shadow-lg rounded-lg overflow-hidden"
+      >
+        <img
+          src="https://instagram.fgye6-1.fna.fbcdn.net/v/t39.30808-6/462271694_18456294466059148_4741580392638500874_n.jpg?stp=dst-jpg_e35_tt6&cb=30a688f7-586271b6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fgye6-1.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2AEQdXVFGBHkfaXf_QM2W2g8xBL7ef53B-cBGdemhlEGwlsAOrLbvWIXygaMV7z-TZM&_nc_ohc=RuqzAMt8TMQQ7kNvgHvnDr1&_nc_gid=ec3292cfd94c4e47bc1a331bc86716a3&edm=AP4sbd4AAAAA&ccb=7-5&ig_cache_key=MzQ3MjY0MTYyMzcxMzg4NzYzNQ%3D%3D.3-ccb7-5-cb30a688f7-586271b6&oh=00_AYDkkUoDuUq3vGThXi6Ygvmdk21XWL6OqKPe3TL3n7vHYA&oe=677E2A15&_nc_sid=7a9f4b"
+          alt="Gabriela Jiménez"
+          class="w-full h-64 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-blue-300">Gabriela Jiménez</h3>
+        </div>
+      </a>
+    </div>
+  </div>
 </ion-content>
