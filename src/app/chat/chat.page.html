@@ -11,9 +11,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="flex flex-col h-full">
-    <div class="flex flex-col flex-1 overflow-auto p-5 gap-3">
-      @for (message of messages(); track message.text) { @if (message.role ===
+  <div class="flex flex-col h-[calc(100%-70px)] overflow-hidden">
+    <div #scrollContainer class="flex flex-col flex-1 overflow-auto p-5 gap-3">
+      @for (message of messages(); track message.id) { @if (message.role ===
       'model') {
       <p
         class="self-start max-w-[80%] p-2 rounded-[0_12px_12px_12px] bg-white/5"
@@ -24,18 +24,27 @@
       <p class="self-end max-w-[80%] p-2 rounded-[12px_0_12px_12px] bg-white/5">
         {{message.text}}
       </p>
-      } }
+      } } @if (loading()) {
+      <p
+        class="self-start max-w-[80%] p-2 rounded-[0_12px_12px_12px] bg-white/5"
+      >
+        <ion-spinner name="dots"></ion-spinner>
+      </p>
+      }
     </div>
 
-    <div class="flex items-center p-3 gap-3">
+    <div class="flex items-center p-4 gap-3">
       <input
         type="text"
         placeholder="Type a message"
-        class="w-full p-3 rounded-2xl focus:outline-none"
+        class="w-full p-3 rounded-xl focus:outline-none"
+        [(ngModel)]="prompt"
+        (keyup.enter)="sendPrompt()"
+        [disabled]="loading()"
       />
 
-      <ion-button shape="round">
-        <ion-icon slot="icon-only" name="heart"></ion-icon>
+      <ion-button shape="round" (click)="sendPrompt()" [disabled]="loading()">
+        <ion-icon slot="icon-only" name="send-outline"></ion-icon>
       </ion-button>
     </div>
   </div>
